@@ -1,34 +1,45 @@
-<LinearLayout
-    android:orientation="vertical"
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="wrap_content" >
 
-    <TextView
-        android:id="@+id/title_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="titles"
-        android:textSize="30sp"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/gencons_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="gens"
-        android:textColor="#5a5a5a"/>
+        <TextView
+            android:id="@+id/title_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="titles"
+            android:textSize="30sp"/>
 
-    <ImageView
-        android:id="@+id/image_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/gencons_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="gens"
+            android:textColor="#5a5a5a"/>
 
-    <TextView
-        android:layout_marginTop="10dp"
-        android:id="@+id/synopsis_detail"
-        android:layout_width="wrap_content"
-        android:textSize="15sp"
-        android:layout_height="wrap_content"
-        android:text="syn"/>
+        <ImageView
+            android:id="@+id/image_detail"
+            android:scaleType="fitXY"
+            android:layout_width="300dp"
+            android:layout_height="400dp" />
 
-</LinearLayout>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/synopsis_detail"
+            android:layout_width="wrap_content"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"
+            android:text="syn"/>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
