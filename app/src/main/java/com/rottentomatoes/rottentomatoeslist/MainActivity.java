@@ -78,6 +78,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         String imageurl = holder.movie.getImageUrl();
         String generalcons = holder.movie.getGeneralcons();
         String synopsis = holder.movie.getSynopsis();
+        String largeimageUrl = holder.movie.getLargeImageURL();
 
 
         Intent intent = new Intent(this, MovieDetailsActivity.class);
@@ -85,6 +86,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         intent.putExtra("Images", imageurl);
         intent.putExtra("GeneralCons", generalcons);
         intent.putExtra("Synopsis", synopsis);
+        intent.putExtra("LargeImages", largeimageUrl);
 
         startActivity(intent);
     }

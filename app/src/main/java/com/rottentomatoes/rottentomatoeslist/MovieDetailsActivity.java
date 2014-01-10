@@ -30,7 +30,7 @@ public class MovieDetailsActivity extends ActionBarActivity {
         String displayTitle = intent.getStringExtra("Titles");
         String displayGeneralCons = intent.getStringExtra("GeneralCons");
         String displaySynopsis = intent.getStringExtra("Synopsis");
-        String displayImageUrl = intent.getStringExtra("Images");
+        String displayImageUrl = intent.getStringExtra("LargeImages");
 
         setContentView(R.layout.activity_movie_details);
         TextView titleText = (TextView) findViewById(R.id.title_detail);

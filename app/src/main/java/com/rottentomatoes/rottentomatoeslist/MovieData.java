@@ -7,14 +7,16 @@ public class MovieData {
     private String movieDetailURL;
     private String generalcons;
     private String synopsis;
+    private String largeImageURL;
 
-    public MovieData(String title, String imageUrl, String movieDetailURL, String generalcons, String synopsis){
+    public MovieData(String title, String imageUrl, String movieDetailURL, String generalcons, String synopsis, String largeImageURL){
         super();
         this.title = title;
         this.imageUrl = imageUrl;
         this.movieDetailURL = movieDetailURL;
         this.generalcons = generalcons;
         this.synopsis = synopsis;
+        this.largeImageURL = largeImageURL;
     }
 
     public String getTitle(){
@@ -55,6 +57,14 @@ public class MovieData {
 
     public void setSynopsis(String synopsis) {
         this.synopsis = synopsis;
+    }
+
+    public String getLargeImageURL() {
+        return largeImageURL;
+    }
+
+    public void setLargeImageURL(String largeImageURL) {
+        this.largeImageURL = largeImageURL;
     }
 
 }

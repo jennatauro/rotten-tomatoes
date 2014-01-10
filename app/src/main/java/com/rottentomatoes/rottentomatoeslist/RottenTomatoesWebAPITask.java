@@ -70,9 +70,10 @@ public class RottenTomatoesWebAPITask extends AsyncTask<String, Integer, String>
                 String movieDetailURL = movie.getJSONObject("links").getString("alternate");
                 String generalcons = movie.getString("critics_consensus");
                 String synopsis = movie.getString("synopsis");
+                String largeimageURL = movie.getJSONObject("posters").getString("detailed");
 
                 //add other json parsing for image, etc here
-                moviedata.add(new MovieData(movieTitle, imageURL, movieDetailURL, generalcons, synopsis));
+                moviedata.add(new MovieData(movieTitle, imageURL, movieDetailURL, generalcons, synopsis, largeimageURL));
             }
         }
         catch (JSONException e) {
