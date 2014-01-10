@@ -71,10 +71,15 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 
 
     public void onItemClick(AdapterView<?> l, View v, int position, long id) {
-        // Then you start a new Activity via Intent
+        //when user clicks on a listview item
         MyViewHolder holder = (MyViewHolder) v.getTag();
-        Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
-                Uri.parse(holder.movie.getMovieDetailURL()));
+
+        String title = holder.movie.getTitle();
+        String imageurl = holder.movie.getImageUrl();
+
+
+        Intent intent = new Intent(this, MovieDetailsActivity.class);
+        intent.putExtra("Titles", title);
         startActivity(intent);
     }
 
