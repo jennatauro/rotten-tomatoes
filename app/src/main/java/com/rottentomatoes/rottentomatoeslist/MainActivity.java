@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ public class MainActivity extends Activity {
     private ListView movieList;
     private LayoutInflater layoutInflator;
     private Button fetchmoviesButton;
+    private RottenTomatoesImageTask imgFetcher;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class MainActivity extends Activity {
         this.movieList = (ListView) findViewById(R.id.movie_list);
         this.layoutInflator = LayoutInflater.from(this);
         this.fetchmoviesButton = (Button)this.findViewById(R.id.fetch_movies_button);
+        this.imgFetcher = new RottenTomatoesImageTask(this);
 
 
         this.fetchmoviesButton.setOnClickListener(new View.OnClickListener() {
@@ -53,12 +56,13 @@ public class MainActivity extends Activity {
     public static class MyViewHolder {
         public TextView movieTitle;
         public Button movieButton;
+        public ImageView image;
         public MovieData movie;
     }
 
     public void setMovies(ArrayList<MovieData> movies) {
         this.movies = movies;
-        this.movieList.setAdapter(new MovieDataAdapter(this,this.layoutInflator, this.movies));
+        this.movieList.setAdapter(new MovieDataAdapter(this,this.imgFetcher, this.layoutInflator, this.movies));
     }
 
 
