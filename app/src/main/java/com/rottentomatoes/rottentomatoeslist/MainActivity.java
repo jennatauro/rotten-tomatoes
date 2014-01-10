@@ -1,9 +1,11 @@
 package com.rottentomatoes.rottentomatoeslist;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -11,7 +13,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import android.widget.Button;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
 
     private ArrayList<MovieData> movies;
     private ListView movieList;
@@ -63,6 +65,17 @@ public class MainActivity extends Activity {
     public void setMovies(ArrayList<MovieData> movies) {
         this.movies = movies;
         this.movieList.setAdapter(new MovieDataAdapter(this,this.imgFetcher, this.layoutInflator, this.movies));
+        this.movieList.setOnItemClickListener(this);
+    }
+
+    public void onItemClick(AdapterView<?> l, View v, int position, long id) {
+        // Then you start a new Activity via Intent
+        Intent intent = new Intent();
+        intent.setClass(this, MovieDetails.class);
+        intent.putExtra("position", position);
+        // Or / And
+        intent.putExtra("id", id);
+        startActivity(intent);
     }
 
 
