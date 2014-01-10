@@ -18,6 +18,11 @@
         android:text="gens"
         android:textColor="#5a5a5a"/>
 
+    <ImageView
+        android:id="@+id/image_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <TextView
         android:layout_marginTop="10dp"
         android:id="@+id/synopsis_detail"
