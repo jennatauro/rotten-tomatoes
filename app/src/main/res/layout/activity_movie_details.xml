@@ -6,8 +6,24 @@
 
     <TextView
         android:id="@+id/title_detail"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Details"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="titles"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/gencons_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="gens"
+        android:textColor="#5a5a5a"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/synopsis_detail"
+        android:layout_width="wrap_content"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:text="syn"/>
 
 </LinearLayout>
