@@ -2,7 +2,9 @@ package com.rottentomatoes.rottentomatoeslist;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -57,7 +59,6 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 
     public static class MyViewHolder {
         public TextView movieTitle;
-        public Button movieButton;
         public ImageView image;
         public MovieData movie;
     }
@@ -68,15 +69,13 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         this.movieList.setOnItemClickListener(this);
     }
 
+
     public void onItemClick(AdapterView<?> l, View v, int position, long id) {
         // Then you start a new Activity via Intent
-        Intent intent = new Intent();
-        intent.setClass(this, MovieDetails.class);
-        intent.putExtra("position", position);
-        // Or / And
-        intent.putExtra("id", id);
+        MyViewHolder holder = (MyViewHolder) v.getTag();
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                Uri.parse(holder.movie.getMovieDetailURL()));
         startActivity(intent);
     }
-
 
 }

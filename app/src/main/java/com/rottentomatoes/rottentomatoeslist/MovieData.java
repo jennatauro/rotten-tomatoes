@@ -4,11 +4,13 @@ public class MovieData {
 
     private String title;
     private String imageUrl;
+    private String movieDetailURL;
 
-    public MovieData(String title, String imageUrl){
+    public MovieData(String title, String imageUrl, String movieDetailURL){
         super();
         this.title = title;
         this.imageUrl = imageUrl;
+        this.movieDetailURL = movieDetailURL;
     }
 
     public String getTitle(){
@@ -25,6 +27,14 @@ public class MovieData {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getMovieDetailURL() {
+        return movieDetailURL;
+    }
+
+    public void setMovieDetailURL(String movieDetailURL) {
+        this.movieDetailURL = movieDetailURL;
     }
 
 }
