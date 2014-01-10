@@ -3,54 +3,21 @@ package com.rottentomatoes.rottentomatoeslist;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.os.AsyncTask;
-import android.util.Log;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-
-import java.util.ArrayList;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.os.AsyncTask;
-import android.util.Log;
-
-/**
- * Created by jennatauro on 1/8/2014.
- */
 
 public class RottenTomatoesWebAPITask extends AsyncTask<String, Integer, String>
 {
     private ProgressDialog progDialog;
     private Context context;
     private MainActivity activity;
-    private static final String debugTag = "RottenTomatoesAPITask";
 
-    /**
-     * Construct a task
-     * @param activity
-     */
     public RottenTomatoesWebAPITask(MainActivity activity) {
         super();
         this.activity = activity;
@@ -89,7 +56,7 @@ public class RottenTomatoesWebAPITask extends AsyncTask<String, Integer, String>
 
         progDialog.dismiss();
         if(result.length()==0){
-            this.activity.alert("Unable to find movie data.  Try again later.");//KEEP GETTING THIS!! which means result from the downloadfromserver has nothing in it
+            this.activity.alert("Unable to find movie data.  Try again later.");
             return;
         }
 
@@ -104,8 +71,6 @@ public class RottenTomatoesWebAPITask extends AsyncTask<String, Integer, String>
 
                 moviedata.add(new MovieData(movieTitle));
             }
-
-
         }
         catch (JSONException e) {
             // TODO Auto-generated catch block

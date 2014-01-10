@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#ff8f7f">
+    android:background="#cac9c2">
 
     <RelativeLayout
         android:id="@+id/RelativeLayout01"
@@ -11,22 +11,28 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/movie_button"
-            android:layout_width="wrap_content"
+            android:id="@+id/fetch_movies_button"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:text="See Box Office Movies"
             android:layout_alignParentRight="true"
-            android:background="#78ffc0"></Button>
+            android:textColor="#FEE734"
+            android:background="#477307"></Button>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#6b6b6b"
+            android:layout_below="@id/fetch_movies_button"/>
     </RelativeLayout>
 
     <ListView
         android:id="@+id/movie_list"
+        android:layout_marginTop="3dp"
         android:choiceMode="singleChoice"
         android:smoothScrollbar="false"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="0dip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:clickable="true"></ListView>
